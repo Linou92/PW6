@@ -1,0 +1,27 @@
+/* plateau initial */
+div#memory_board{
+	background:#F7D283;
+    opacity: 0.5;
+	border:#999 1px solid;
+	width:800px;
+	height:600px;
+	padding:24px;
+	margin:0px auto;
+}
+
+
+/* cartes */
+div#memory_board > div{
+	background: #E17032;
+	border:#000 1px solid;
+	width:70px;
+	height:90px;
+	float:left;
+	margin:10px;
+	padding:20px;
+	font-size:64px;
+	cursor:pointer;
+	text-align:center;
+    box-shadow: 10px 10px 10px #000;
+}
+
