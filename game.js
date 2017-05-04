@@ -5,6 +5,10 @@ var clicked_cards = [];
 var tile_ids = [];
 var flipped = 0;
 
+// Ressources
+var bonus = "bb";
+
+
 // fonction qui mélange les cartes et les positionne au hasard
 Array.prototype.shuffle = function(){
     var i = this.length, j, temp;
@@ -15,6 +19,72 @@ Array.prototype.shuffle = function(){
         this[i] = temp;
     }
 }
+
+// chronomètre
+var startTime = 0;
+var start = 0;
+var end = 0;
+var diff = 0;
+var timerID = 0;
+
+function chrono(){
+    end = new Date();
+    diff = end - start;
+    diff = new Date(diff);
+    var msec = diff.getMilliseconds();
+    var sec = diff.getSeconds();
+    var min = diff.getMinutes();
+    var hr = diff.getHours()-1;
+    if (min < 10){
+        min = "0" + min;
+    }
+    if (sec < 10){
+        sec = "0" + sec;
+    }
+    if(msec < 10){
+        msec = "00" +msec;
+    }
+    else if(msec < 100){
+        msec = "0" +msec;
+    }
+    document.getElementById("chronotime").innerHTML = min + ":" + sec;
+    timerID = setTimeout("chrono()", 10);
+}
+
+function chronoStart(){
+    document.chronoForm.startstop.value = "Pause";
+    document.chronoForm.startstop.onclick = chronoStop;
+    document.chronoForm.reset.onclick = chronoReset;
+    start = new Date();
+    chrono();
+}
+
+function chronoContinue(){
+    document.chronoForm.startstop.value = "Pause";
+    document.chronoForm.startstop.onclick = chronoStop;
+    document.chronoForm.reset.onclick = chronoReset;
+    start = new Date()-diff;
+    start = new Date(start);
+    chrono();
+}
+
+function chronoReset(){
+    document.getElementById("chronotime").innerHTML = "00:00";
+    start = new Date();
+}
+
+function chronoStopReset(){
+    document.getElementById("chronotime").innerHTML = "00:00";
+    document.chronoForm.startstop.onclick = chronoStart;
+}
+
+function chronoStop(){
+    document.chronoForm.startstop.value = "Play";
+    document.chronoForm.startstop.onclick = chronoContinue;
+    document.chronoForm.reset.onclick = chronoStopReset;
+    clearTimeout(timerID);
+}
+
 
 // initialisation du plateau
 function newBoard(){
@@ -34,7 +104,9 @@ function newBoard(){
 
 // fonction principale
 function flip(tile,value){
-	if(tile.innerHTML == "" && clicked_cards.length < 2){
+    document.getElementById('bonus').value = "bb";
+	
+    if(tile.innerHTML == "" && clicked_cards.length < 2){
         // fond de la carte
 		tile.style.background = '#FFF';
         // valeur de la carte
@@ -56,6 +128,8 @@ function flip(tile,value){
 				// vérifie que tout le plateau est remis à zéro
 				if(flipped == cards.length){
                     // fin du jeu
+                    //bonus++;
+                    //document.getElementById('bonus').value = bonus;
 					alert("Jeu terminé... Initialisation d'un nouveau jeu");
 					document.getElementById('memory_board').innerHTML = "";
 					// nouveau jeu
@@ -74,6 +148,7 @@ function flip(tile,value){
 				    // on vide les tableaux
 				    clicked_cards = [];
             	    tile_ids = [];
+                   // document.getElementById('bonus').value = bonus;
 				}
 				setTimeout(different, 700);
 			}

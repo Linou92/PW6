@@ -4,15 +4,50 @@
 
         <meta charset="utf-8" meta content="text/html" http-eqi="Content-Type">
         <title>Memory</title>
-        <link rel="stylesheet" type="text/css" href="style.css" />
+        <link rel="stylesheet" type="text/css" href="memory.css" />
 
     </head>
 
     <script type="text/javascript" src="game.js"></script>
 
     <body background="bg.jpg">
-        <h1>Memory</h1>
+        <h1>Memory Game</h1>
+        <!-- plateau de jeu -->
         <div class="flip3D" id="memory_board"></div>
+        
+        
+        <blockquote class="options" id="options">
+            
+            <div class="id">
+                <label id="nom"><b>Nom du personnage: </b>
+                </label>
+            </div><br>
+            
+            <div class="argent" id="argent">
+                <img src="logo/monnaie.png" width="50" height="50" class="monnaie" /><b> :</b>
+                <input type="text" name="monnaie" id="monnaie">
+            </div><br> 
+                
+            <div class="bonus">
+                <img src="logo/bonus.png" width="60" height="60"/><b> :</b>
+                <input type="text" name="bonus" id="bonus">
+            </div><br>
+            
+            <div class="extraBonus" id="extraBonus">
+                <img src="logo/doubleBonus.png" width="80" height="50"/><b> :</b>
+                <input type="text" name="extraBonus" id="extraBonus">
+            </div><br>
+            
+            <form name="chronoForm">
+                <img src="logo/chrono.png" width="50" height="50"/><b> :</b>
+                 <span id="chronotime" style="color: floralwhite">00:00</span>
+                <input type="button" name="startstop" value="Play" onClick="chronoStart()" />
+                <input type="button" name="reset" value="Reset" onClick="chronoReset()" />
+            </form>
+
+        </blockquote>
+        
         <script>newBoard();</script>
+    
     </body>
 </html>
