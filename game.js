@@ -104,7 +104,10 @@ function newBoard(){
 
 // fonction principale
 function flip(tile,value){
-    document.getElementById('bonus').value = "bb";
+    //document.getElementById('bonus').innerHTML = "bb";
+    //document.getElementById('bonus').value = "bb";
+    //document.bonus.value = "bb";
+    //document.bonus.innerHTML="bb";
 	
     if(tile.innerHTML == "" && clicked_cards.length < 2){
         // fond de la carte
@@ -128,8 +131,6 @@ function flip(tile,value){
 				// vérifie que tout le plateau est remis à zéro
 				if(flipped == cards.length){
                     // fin du jeu
-                    //bonus++;
-                    //document.getElementById('bonus').value = bonus;
 					alert("Jeu terminé... Initialisation d'un nouveau jeu");
 					document.getElementById('memory_board').innerHTML = "";
 					// nouveau jeu
@@ -148,7 +149,6 @@ function flip(tile,value){
 				    // on vide les tableaux
 				    clicked_cards = [];
             	    tile_ids = [];
-                   // document.getElementById('bonus').value = bonus;
 				}
 				setTimeout(different, 700);
 			}

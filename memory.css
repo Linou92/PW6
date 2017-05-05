@@ -25,12 +25,19 @@ div#memory_board > div{
     box-shadow: 10px 10px 10px #000;
 }
 
+body{
+    background: url("bg.jpg") no-repeat;
+    background-size: cover;   
+}
+
+/* titre */
 h1{
     color: floralwhite;
     margin-top:  0px;
     text-align: center;
 }
 
+/* infos perso */
 blockquote {
     display: block;
     margin-top: 0em;
@@ -43,11 +50,69 @@ b{
     color: floralwhite;
 }
 
+/* chrono */
+form{
+    text-align: center;
+}
 
-input[type=text] {
-    background-color: floralwhite;
-    
+/* logos */
+img{
     display: inline-block;
+    width: 60px;
+}
+
+/* contact MP */
+form#MP {
+    /* Just to center the form on the page */
+    margin: 0 auto;
+    width: 400px;
+    float: right;
+    /* To see the limits of the form */
+    padding: 1em;
+    border: 3px solid floralwhite;
+    border-radius: 1em;
+}
+
+form#MP > div {
+    margin-top: 1em;
+}
+
+label {
+    /* To make sure that all label have the same size and are properly align */
+    display: inline-block;
+    width: 90px;
+    text-align: right;
+    color: floralwhite;
+}
+
+form#MP > input, textarea {
+    /* To make sure that all text field have the same font settings
+     By default, textarea are set with a monospace font */
+    font: 1em sans-serif;
+    /* To give the same size to all text field */
+    width: 300px;
+    box-sizing: border-box;
+    /* To harmonize the look & feel of text field border */
     border: none;
-    
+}
+
+input:focus, textarea:focus {
+    /* To give a little highligh on active elements */
+    border-color: #000;
+}
+
+textarea {
+    /* To properly align multiline text field with their label */
+    vertical-align: top;
+    /* To give enough room to type some text */
+    height: 5em;
+  /* To allow users to resize any textarea vertically
+     It works only on Chrome, Firefox and Safari */
+    resize: vertical;
+}
+
+.button {
+    /* To position the buttons to the same position of the text fields */
+    padding-left: 90px; /* same size as the label elements */
+
 }

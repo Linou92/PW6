@@ -3,51 +3,88 @@
     <head>
 
         <meta charset="utf-8" meta content="text/html" http-eqi="Content-Type">
+        
         <title>Memory</title>
+        
+        <audio controls autoplay loop>
+            <source src="soundtrack.mp3" type="audio/mpeg">
+        </audio>
+        
         <link rel="stylesheet" type="text/css" href="memory.css" />
 
     </head>
 
     <script type="text/javascript" src="game.js"></script>
 
-    <body background="bg.jpg">
+    <body>
+        
         <h1>Memory Game</h1>
+    
         <!-- plateau de jeu -->
-        <div class="flip3D" id="memory_board"></div>
+        <div class="flip3D" id="memory_board"></div><br><br>
         
+        <!-- Chrono -->
+        <form name="chronoForm">
+            <img src="logo/chrono.png" width="50" height="50"/><b> :</b>
+            <span id="chronotime" style="color: floralwhite">00:00</span><br><br>
+            <input type="button" name="startstop" value="Play" onClick="chronoStart()" />
+            <input type="button" name="reset" value="Reset" onClick="chronoReset()" />
+            <input type="button" name="logout" value="Logout"/>
+        </form><br><br>
         
-        <blockquote class="options" id="options">
-            
-            <div class="id">
-                <label id="nom"><b>Nom du personnage: </b>
-                </label>
-            </div><br>
-            
-            <div class="argent" id="argent">
-                <img src="logo/monnaie.png" width="50" height="50" class="monnaie" /><b> :</b>
-                <input type="text" name="monnaie" id="monnaie">
-            </div><br> 
-                
-            <div class="bonus">
-                <img src="logo/bonus.png" width="60" height="60"/><b> :</b>
-                <input type="text" name="bonus" id="bonus">
-            </div><br>
-            
-            <div class="extraBonus" id="extraBonus">
-                <img src="logo/doubleBonus.png" width="80" height="50"/><b> :</b>
-                <input type="text" name="extraBonus" id="extraBonus">
-            </div><br>
-            
-            <form name="chronoForm">
-                <img src="logo/chrono.png" width="50" height="50"/><b> :</b>
-                 <span id="chronotime" style="color: floralwhite">00:00</span>
-                <input type="button" name="startstop" value="Play" onClick="chronoStart()" />
-                <input type="button" name="reset" value="Reset" onClick="chronoReset()" />
-            </form>
+        <!-- Formulaire de MP -->
+        <form name="MP" id="MP">
+            <div>
+                <label for="nom">From :</label>
+                <input type="text" id="nom" value="Enter your username" />
+            </div>
+            <div>
+                <label for="email">To :</label>
+                <input type="email" id="email" value="Enter the username" />
+            </div>
+            <div>
+                <label for="msg">Message :</label>
+                <textarea id="msg"></textarea>
+            </div>
 
+            <div class="button">
+                <button type="submit">Send</button>
+                <button type="reset">Cancel</button>
+            </div>
+        </form>
+
+        
+        <blockquote class="options" id="options" name="options">
+                
+                <!-- Nom perso -->
+                <div>
+                    <label id="nom"><b>Nom du personnage: </b></label><br><br>
+                </div>
+                
+                <!-- Argent -->
+                <div>
+                    <img src="logo/monnaie.png" width="50" height="50" class="monnaie" /><b> :</b>
+                    <input type="text" name="monnaie" id="monnaie"><br><br>
+                </div>
+                
+                <!-- Bonus simple -->
+                <div>
+                    <img src="logo/bonus.png" width="60" height="60"/><b> :</b>
+                    <p id="bonus" /p><br><br>  
+                </div>    
+            
+                <!-- Double bonus -->
+                <div>
+                    <img src="logo/doubleBonus.png" width="80" height="50"/><b> :</b>
+                    <input type="text" name="extraBonus" id="extraBonus"><br><br>
+                </div>    
+            
         </blockquote>
         
-        <script>newBoard();</script>
+        <script>
+            newBoard();
+
+        </script>
     
     </body>
 </html>
