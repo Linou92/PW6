@@ -7,6 +7,7 @@ Projet fait par Lina ABU HIJLEH et Louis CHASLE dans le cadre du module de PW6 p
 Langages utilisés : PHP, Symfony, Javascript, JQuery, HTML, CSS
 
 Fonctionnalités de chaque page:
+
     => auth.html: page permettant de s'inscrire et de se connecter (FINIE)
     
     => monPerso.html: affiche les infos du personnage de l'utilisateur (son nom, nb de bonus, nb de double bonus, temps de connexion, nb de MP)
@@ -22,8 +23,10 @@ Fonctionnalités de chaque page:
                 
     => creationPerso.html: permet de créer un nouveau perso
         manque: à finir
-    
+
+
 Ressources:
+
     => 1 partie finie = +1 bonus
     
     => si on finit la partie en moins de 20 secondes = +2 doubleBonus
