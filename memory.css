@@ -26,7 +26,7 @@ div#memory_board > div{
 }
 
 body{
-    background: url("bg.jpg") no-repeat;
+    background: url("logo/bg.jpg") no-repeat;
     background-size: cover;   
 }
 
