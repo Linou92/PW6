@@ -18,3 +18,13 @@ h1{
 b{
     color: floralwhite;
 }
+
+input {
+    height:40px;
+    width:80px;
+    display:inline-block;
+}
+
+.button{
+    text-align:center;
+}
