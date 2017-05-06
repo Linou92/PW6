@@ -63,11 +63,9 @@ img{
 
 /* contact MP */
 form#MP {
-    /* Just to center the form on the page */
     margin: 0 auto;
     width: 400px;
     float: right;
-    /* To see the limits of the form */
     padding: 1em;
     border: 3px solid floralwhite;
     border-radius: 1em;
@@ -106,8 +104,7 @@ textarea {
     vertical-align: top;
     /* To give enough room to type some text */
     height: 5em;
-  /* To allow users to resize any textarea vertically
-     It works only on Chrome, Firefox and Safari */
+  /* To allow users to resize any textarea vertically*/
     resize: vertical;
 }
 
@@ -115,4 +112,9 @@ textarea {
     /* To position the buttons to the same position of the text fields */
     padding-left: 90px; /* same size as the label elements */
 
+}
+
+p {
+    display: inline-block;
+    margin-left: 20px;
 }

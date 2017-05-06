@@ -14,8 +14,6 @@
 
     </head>
 
-    <script type="text/javascript" src="game.js"></script>
-
     <body>
         
         <h1>Memory Game</h1>
@@ -25,10 +23,10 @@
         
         <!-- Chrono -->
         <form name="chronoForm">
-            <img src="logo/chrono.png" width="50" height="50"/><b> :</b>
+            <img src="logo/chrono.png" width="50" height="50"/>
             <span id="chronotime" style="color: floralwhite">00:00</span><br><br>
-            <input type="button" name="startstop" value="Play" onClick="chronoStart()" />
-            <input type="button" name="reset" value="Reset" onClick="chronoReset()" />
+            <input type="button" name="newGame" value="New Game" onClick="startGame()"/>
+            <input type="button" name="pauseContinue" value="Pause" onClick="chronoStart()"/>
             <input type="button" name="logout" value="Logout"/>
         </form><br><br>
         
@@ -63,28 +61,29 @@
                 
                 <!-- Argent -->
                 <div>
-                    <img src="logo/monnaie.png" width="50" height="50" class="monnaie" /><b> :</b>
-                    <input type="text" name="monnaie" id="monnaie"><br><br>
+                    <img src="logo/monnaie.png" width="50" height="50" class="monnaie" /><b> :<p id="monnaie"></p></b>
+                    <br>
                 </div>
                 
                 <!-- Bonus simple -->
                 <div>
-                    <img src="logo/bonus.png" width="60" height="60"/><b> :</b>
-                    <p id="bonus" /p><br><br>  
+                    <img src="logo/bonus.png" width="60" height="60"/><b> :<p id="bonus" ></p></b><br>  
                 </div>    
             
                 <!-- Double bonus -->
                 <div>
-                    <img src="logo/doubleBonus.png" width="80" height="50"/><b> :</b>
-                    <input type="text" name="extraBonus" id="extraBonus"><br><br>
+                    <img src="logo/doubleBonus.png" width="80" height="50"/><b> :<p id="extraBonus"></p></b>
+                    <br>
                 </div>    
             
         </blockquote>
         
+        <script type="text/javascript" src="game.js"></script>
         <script>
             newBoard();
 
         </script>
+        
     
     </body>
 </html>
