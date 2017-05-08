@@ -1,6 +1,6 @@
 // valueurs des cartes
-var cards = ['A','A','B','B','C','C','D','D','E','E','F','F','G','G','H','H','I','I','J','J','K','K','L','L'];
-
+//var cards = ['A','A','B','B','C','C','D','D','E','E','F','F','G','G','H','H','I','I','J','J','K','K','L','L'];
+var cards = ['A','A','B','B'];
 // sauvegarde des cartes cliquées
 var clicked_cards = [];
 var tile_ids = [];
@@ -201,7 +201,7 @@ function endGame(){
     sec2 = diff2.getSeconds();
     //console.log("sec = "+diff2.getSeconds());
     if(min2<1 && sec2<seuilExtraBonus){
-        extraBonus++;
+        extraBonus+=2;
         //console.log("extrabonus !");
     }
     else{
