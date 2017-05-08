@@ -43,7 +43,7 @@ var stopGame=true;
 // chronomètre
 function chrono(){ 
     end = new Date(); // date courante
-    diff = end - start;
+    diff = end - start; // diff entre date debut et date de fin
     diff = new Date(diff);
     var msec = diff.getMilliseconds();
     var sec = diff.getSeconds();
@@ -55,17 +55,13 @@ function chrono(){
     if (sec < 10){
         sec = "0" + sec; // affiche 01,02,03...
     }
-    /*if(msec < 10){
-        msec = "00" +msec;
-    }
-    else if(msec < 100){
-        msec = "0" +msec;
-    }*/
+   
     document.getElementById("chronotime").innerHTML = min + ":" + sec;
     timer = setTimeout("chrono()", 10); // 10 msec avant l'execution de chrono()
 }
 
 
+// demarrage du chrono
 function chronoStart(){
     document.chronoForm.pauseContinue.value = "Pause";
     document.chronoForm.pauseContinue.onclick = chronoStop;
@@ -74,6 +70,7 @@ function chronoStart(){
     chrono();
 }
 
+// quand on clique sur pause
 function chronoContinue(){
     document.chronoForm.pauseContinue.value = "Pause";
     document.chronoForm.pauseContinue.onclick = chronoStop;
@@ -95,6 +92,7 @@ function chronoStopReset(){
     document.chronoForm.pauseContinue.onclick = chronoStart;
 }
 
+// quand on clique sur le bouton continue
 function chronoStop(){
     document.chronoForm.pauseContinue.value = "Continue";
     document.chronoForm.pauseContinue.onclick = chronoContinue;
@@ -106,10 +104,8 @@ function chronoStop(){
 
 // initialisation du plateau
 function newBoard(){
-    //bonus=bonus2;
 	flipped = 0;
 	var output = '';
-    //start1=
     // on mélange les cartes
     cards.shuffle();
     // MAJ des ressources
@@ -124,7 +120,7 @@ function newBoard(){
 }
 
 
-// initialisation ressources
+// initialisation/mise a jour ressources
 function updateRessources(){
     document.getElementById('bonus').innerHTML = bonus;
     document.getElementById('extraBonus').innerHTML = extraBonus;
